@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <title>ColorNote</title>
+</head>
+
+<body id="default">
+  <div class="container-app">
+
+    <div class="app">
+
+      <div class="header">
+        <div class="row align-center">
+          <span class="fas fa-bars mr-2" id="setting"></span>
+          <h1 class="header__title"> <span class="title-text-p1 text-effect">Color</span><span class="title-text-p2 text-effect">Note</span> </h1>
+        </div>
+        <div class="row align-center">
+          <span class="fas mr-2 fa-palette" data-hint="изменить цвет фона" id="palette"></span>
+          <span class="fas mr-2 fa-trash-alt" data-hint="очистить список задач" id="clear-taskList"></span>
+        </div>
+      </div>
+
+      <div class="p-1 sort flex" id="sort">
+          <p class="text-dark mx-1">
+            <span id="sortMsg"> сортировать по цвету </span>
+            <span class="fas fa-caret-square-down v-top text-dark"></span>
+          </p>
+      </div>
+
+      <div class="modal">
+        <div class="modal__wrapper container-app p-5">
+          <h2 class="big">Сортировка</h2>
+          <hr class="my-2 border-2 border-light box-neon-blue">
+
+        <div class="topic-list">
+          <div class="topic-list__item">
+            <div class="size-5 mr-1 bg-light box-neon-light mr-2"></div>
+            <span>По дате создания</span>
+            <span data-topic="default"></span>
+          </div>
+
+          <div class="topic-list__item">
+            <div class="size-5 mr-1 bg-info  box-neon-blue mr-2"></div>
+            <span>по цвету</span><span data-topic="light"></span>
+          </div>
+
+          <div class="topic-list__item">
+            <div class="size-5 mr-1 bg-dark box-neon-red mr-2"></div>
+            <span>по алфавиту</span>
+            <span data-topic="dark"></span>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+      <!-- todo -->
+      <ul id="todo"></ul>
+
+      <!-- Форма Добавление -->
+      <form class="todo-form">
+        <input type="text" class="input-text mr-1" id="todo-msg" placeholder="Задача ...">
+        <span class="fas fa-feather-alt input-add" id="todo-add"></span>
+      </form>
+
+    </div>
+
+    <div class="setting hide">
+
+      <div class="header">
+        <div class="row align-center">
+          <span class="fas fa-arrow-left mr-2" id="setting"></span>
+          <h2 class="header__title"> <span class="title-text-p1 text-effect">Настройки</span> </h2>
+        </div>
+      </div>
+
+      <div class="bg-dark p-2">
+
+        <span class="text-light">Основные</span>
+        <hr class="my-2">
+        <span class="text-light">Цвет задач по умолчанию</span>
+
+        <ul class="mb-2 px-1 color" id="color-default">
+
+          <li class="color__item my-1">
+            <div class="size-5 bg-yellow mr-2 like active"><span class="fas fa-check-circle"></span></div>
+            <div class="size-5 bg-green mr-2 like "> <span class="fas fa-check-circle"></span> </div>
+            <div class="size-5 bg-red mr-2 like "> <span class="fas fa-check-circle"></span> </div>
+          </li>
+
+          <li class="color__item mb-1">
+            <div class="size-5 bg-blue mr-2 like "> <span class="fas fa-check-circle"></span> </div>
+            <div class="size-5 bg-orange mr-2 like "> <span class="fas fa-check-circle"></span> </div>
+            <div class="size-5 bg-silver mr-2 like"> <span class="fas fa-check-circle"></span> </div>
+          </li>
+          <li class="color__item mb-1">
+            <div class="size-5 bg-lightgreen mr-2 like"> <span class="fas fa-check-circle"></span> </div>
+            <div class="size-5 bg-pink mr-2 like"> <span class="fas fa-check-circle"></span> </div>
+            <div class="size-5 bg-aqua mr-2 like"> <span class="fas fa-check-circle"></span> </div>
+          </li>
+        </ul>
+
+        <span class="text-light">Сортировка по цвету</span>
+        <ul class="flex-column px-1 mb-2">
+          <li class="flex my-1">
+            <div class="size-5 bg-black flex align-center justify-center mr-2">
+              <span class="fas fa-pen-alt" data-hint="изменить приоритетность цветов"></span>
+            </div>
+            <div class="size-5 bg-yellow mr-2 flex align-center justify-center text-dark">1</div>
+          </li>
+          <li class="flex mb-1">
+            <div class="size-5 bg-green mr-2 flex align-center justify-center text-dark">2</div>
+            <div class="size-5 bg-red mr-2 flex align-center justify-center text-dark">3</div>
+          </li>
+          <li class="flex mb-1">
+            <div class="size-5 bg-blue mr-2 flex align-center justify-center text-dark">4</div>
+            <div class="size-5 bg-orange mr-2 flex align-center justify-center text-dark">5</div>
+          </li>
+          <li class="flex mb-1">
+            <div class="size-5 bg-silver mr-2 flex align-center justify-center text-dark">6</div>
+            <div class="size-5 bg-lightgreen mr-2 flex align-center justify-center text-dark">7</div>
+          </li>
+          <li class="flex mb-1">
+            <div class="size-5 bg-pink mr-2 flex align-center justify-center text-dark">8</div>
+            <div class="size-5 bg-aqua mr-2 flex align-center justify-center text-dark">9</div>
+          </li>
+        </ul>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
